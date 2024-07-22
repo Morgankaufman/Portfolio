@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\fontawesome-all.min.css" />
+    <Content Remove="wwwroot\css\images\arrow.svg" />
+    <Content Remove="wwwroot\css\images\dark-arrow.svg" />
+    <Content Remove="wwwroot\css\images\overlay.png" />
+    <Content Remove="wwwroot\css\images\poptrox-closer.svg" />
+    <Content Remove="wwwroot\css\images\poptrox-nav.svg" />
+    <Content Remove="wwwroot\css\main.css" />
+    <Content Remove="wwwroot\css\noscript.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\fontawesome-all.min.css" />
+    <None Include="wwwroot\css\images\arrow.svg" />
+    <None Include="wwwroot\css\images\dark-arrow.svg" />
+    <None Include="wwwroot\css\images\overlay.png" />
+    <None Include="wwwroot\css\images\poptrox-closer.svg" />
+    <None Include="wwwroot\css\images\poptrox-nav.svg" />
+    <None Include="wwwroot\css\main.css" />
+    <None Include="wwwroot\css\noscript.css" />
+    <None Include="wwwroot\images\Screenshot %281%29.png" />
+    <None Include="wwwroot\images\Screenshot %283%29.png" />
+    <None Include="wwwroot\images\Screenshot %284%29.png" />
+    <None Include="wwwroot\js\breakpoints.min.js" />
+    <None Include="wwwroot\js\browser.min.js" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\jquery.poptrox.min.js" />
+    <None Include="wwwroot\js\jquery.scrollex.min.js" />
+    <None Include="wwwroot\js\jquery.scrolly.min.js" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\util.js" />
+    <None Include="wwwroot\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SendGrid" Version="9.29.3" />
+  </ItemGroup>
+
+</Project>
