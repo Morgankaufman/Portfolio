@@ -1,0 +1,170 @@
+﻿@{
+    ViewData["Title"] = "My Porfolio";
+    @model Portfolio.Models.ContactFormModel
+}
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <noscript><link rel="stylesheet" href="~/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <h1>Morgan Kaufman</h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#one">What I Do</a></li>
+                <li><a href="#two">Who I Am</a></li>
+                <li><a href="#work">My Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Intro -->
+    <section id="intro" class="main style1 dark fullscreen">
+        <div class="content">
+            <header>
+                <h2>Morgan Kaufman</h2>
+            </header>
+            <p>Software Developer.</p>
+            <footer>
+                <a href="#one" class="button style2 down">More</a>
+            </footer>
+        </div>
+    </section>
+
+    <!-- One -->
+    <section id="one" class="main style2 right dark fullscreen">
+        <div class="content box style2">
+            <header>
+                <h2>What I Do</h2>
+            </header>
+            <p>
+                I create and work on software development projects in C#, SQL, HTML, CSS,
+                JavaScript, ASP.NET MVC. Self- directed, detail-oriented, and professional C#
+                programmer with experience in designing, developing, analyzing, and implementing
+                client-server, web and desktop-based applications using C# language. Expertise in
+                system designing as well as in testing, debugging and modifying related application code.
+                Capable of learning new programming languages and technologies and completing projects within specified deadlines.
+            </p>
+        </div>
+        <a href="#two" class="button style2 down anchored">Next</a>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="main style2 left dark fullscreen">
+        <div class="content box style2">
+            <header>
+                <h2>Who I Am</h2>
+            </header>
+            <p>
+                I am Morgan Kaufman a Software Developer. I love to problem solve and work with
+                teams to best find solutions to everyday needs. I am always looking for new opportunities
+                to learn and grow in my experience in software development. There are always problems that
+                need to be solved and I am here to help find solutions.
+            </p>
+        </div>
+        <a href="#work" class="button style2 down anchored">Next</a>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="main style3 primary">
+        <div class="content">
+            <header>
+                <h2>My Work</h2>
+                <p>Here are some of the projects I have worked on.</p>
+                <p>
+                    CSV Parsing and Geolocation TDD Project: C# <a href="https://github.com/Morgankaufman/TacoParser">Taco Parser</a>Application made in Visual Studio
+                    using C#, .NET Core, and xUnit testing.
+                    Uses a CSV document which lists the city and coordinates of different restaurants.
+                    The application splits each line of the document into an array ([location name, latitude, longitude]).
+                    Test-driven development ensures that invalid and missing data is handled correctly.
+                    If the data is out of bounds or cannot be parsed, then the parse method returns null. Otherwise, the latitude and longitude are parsed.
+                    The distance between each pair of coordinates is calculated in order to find the two restaurants furthest apart.
+                </p><p>
+                    CRUD Image Database Website: ASP.NET MVC | C# | HTML | CSS | SQL  <a href="https://github.com/Morgankaufman/ASP.NETPractice">CRUD web page</a>
+                    Created an image model with a name, ID and image path properties in C#.  Created a view image model to display the image name and file path.
+                    Created an image repository in C# with CRUD methods for inserting new images, displaying a list of images and deleting images.
+                    Used SQL commands and connections in each CRUD method for inserting new images, displaying a list of images and deleting images.
+                    Used HTML to create an image upload view page and then created a corresponding C# controller to save the image into the image folder and store
+                    the file path in the SQL database.
+                    Used HTML and CSS to create view pages with a page for displaying a grid of images and a page to display a time-lapse of all images.
+                    Created corresponding controllers for the grid page and time-lapse in C#.
+
+                </p><p>
+                    KanyeREST: C# | .NET Core| JSON | API  <a href="file:///C:/Users/jarod/AppData/Local/Temp/087a6dfc-3806-4fa1-beec-bbc817366643_html5up-big-picture.zip.643/APIsAndJSON/RonVSKanyeAPI.cs">Ron Vs Kanye API</a>
+                    This program will simulate a conversation between Kanye West and Ron Swanson through API calls.
+                    using the Newtonsoft.JSON NuGet package the program will make a call to the Kanye URL and parse the JSON object into a string called kanyeQuote.
+                    The application makes a call to the Ron Swanson API and parses the JSON Array into a string called swansonQuote.
+                </p>
+            </header>
+    </section>
+    <!--Contact-->
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>I am always looking for new projects to work on, please send me a message and I will get back to you as soon as possible!</p>
+
+        @using (Html.BeginForm("SendContactForm", "Home", FormMethod.Post))
+        {
+            <div>
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Message)
+                @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        }
+
+        @section Scripts {
+            <partial name="_ValidationScriptsPartial" />
+        }
+</section>
+
+    <!-- Footer -->
+    <footer id="footer">
+
+        <!-- Icons -->
+        <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+        </ul>
+
+        <!-- Menu -->
+        <ul class="menu">
+            <li>&copy; Untitled</li>
+            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.poptrox.min.js"></script>
+    <script src="~/js/jquery.scrolly.min.js"></script>
+    <script src="~/js/jquery.scrollex.min.js"></script>
+    <script src="~/js/browser.min.js"></script>
+    <script src="~/js/breakpoints.min.js"></script>
+    <script src="~/js/util.js"></script>
+    <script src="~/js/main.js"></script>
+
+</body>
